@@ -49,29 +49,8 @@ export default function Homepage() {
     }
   };
 
-  // Locomotive scroll
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      smoothMobile: true,
-      inertia: 1, // Adjust the inertia value as needed
-    });
-
-    // Optionally, you can add event listeners or other logic here
-
-    // Clean up the instance on component unmount
-    return () => {
-      scroll.destroy();
-    };
-  }, []);
-
   return (
-    <div className="pt-7" ref={scrollRef}>
-      <NavBar />
-
+    <div>
       <div className="mt-24">
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
