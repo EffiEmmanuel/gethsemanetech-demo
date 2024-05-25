@@ -160,9 +160,9 @@ export default function Homepage() {
             </div>
             <p className="">Check out our most recent project.</p>
 
-            <div className="flex flex-row flex-wrap gap-10">
+            <div className="flex flex-row justify-center gap-10 w-full">
               {/* Featured Project Card */}
-              <div className="w-full flex flex-col gap-y-48">
+              <div className="w-full flex flex-col justify-center gap-y-48">
                 <div className="flex lg:flex-row flex-col gap-y-16 w-full lg:justify-between">
                   <div className="lg:w-[48%] w-full">
                     <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
