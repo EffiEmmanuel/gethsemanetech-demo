@@ -6,6 +6,9 @@ module.exports = {
       textColor: {
         gethsemaneBlack: "#000",
       },
+      animation: {
+        spin: "spin 9s linear infinite",
+      },
     },
   },
   plugins: [],
