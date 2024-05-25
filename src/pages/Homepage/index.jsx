@@ -168,7 +168,7 @@ export default function Homepage() {
                     <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
                       <img
                         src={shuttlelaneThumbnail}
-                        className="object-cover"
+                        className="object-cover w-full"
                       />
                     </div>
                     <p className="text-md text-center w-full mt-4">
