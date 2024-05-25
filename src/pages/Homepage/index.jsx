@@ -1,17 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/NavBar";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
-import { MdLink } from "react-icons/md";
+import { MdLightbulb, MdLink } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
+import LocomotiveScroll from "locomotive-scroll";
 
 // Images
 import gethsemaneTechCircleAsset from "../../assets/images/gethsemane-tech-circle-asset.png";
 import wave from "../../assets/images/wave.jpg";
 // Project images
 import shuttlelaneThumbnail from "../../assets/images/projects/shuttlelane/shuttlelane-thumb2.png";
-import { Link } from "react-router-dom";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import Footer from "../../components/Footer";
+import { Fade } from "react-awesome-reveal";
 
 MouseFollower.registerGSAP(gsap);
 const cursor = new MouseFollower();
@@ -48,35 +49,67 @@ export default function Homepage() {
     }
   };
 
+  // Locomotive scroll
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      smoothMobile: true,
+      inertia: 1, // Adjust the inertia value as needed
+    });
+
+    // Optionally, you can add event listeners or other logic here
+
+    // Clean up the instance on component unmount
+    return () => {
+      scroll.destroy();
+    };
+  }, []);
+
   return (
-    <div className="pt-7">
+    <div className="pt-7" ref={scrollRef}>
       <NavBar />
 
       <div className="mt-24">
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
           <div className="w-full px-7 lg:px-14 min-h-[45vh] lg:min-h-[70vh] mt-12 lg:relative lg:top-6">
-            <h1 className="lg:text-[4rem] text-4xl">We are a Software</h1>
+            <Fade duration={1000}>
+              <h1 className="lg:text-[4rem] text-4xl">We are a Software</h1>
+            </Fade>
             <div className="lg:mt-7 flex flex-row lg:gap-x-4 gap-x-2 items-center">
-              <img
-                src={gethsemaneTechCircleAsset}
-                className="max-w-[60px] w-[60px] lg:max-w-[80px] lg:w-[80px] object-contain animate-spin"
-                alt="Gethsemane Technologies"
-              />
+              <Fade direction="up" delay={1000} duration={1000}>
+                <img
+                  src={gethsemaneTechCircleAsset}
+                  className="max-w-[60px] w-[60px] lg:max-w-[80px] lg:w-[80px] object-contain animate-spin"
+                  alt="Gethsemane Technologies"
+                />
+              </Fade>
 
-              <h1 className="lg:text-[4rem] text-4xl">
-                <span className="italic font-light">design</span> and de-
+              <h1 className="lg:text-[4rem] text-4xl w-full flex flex-row items-center gap-x-2">
+                <Fade direction="up" delay={200} duration={1000}>
+                  <span className="italic font-light">design</span>
+                </Fade>
+                <Fade direction="up" delay={400} duration={1000}>
+                  <span>and de-</span>
+                </Fade>
               </h1>
             </div>
-            <h1 className="lg:mt-7 lg:text-[4rem] text-4xl">
-              -velopment agency
-            </h1>
+            <Fade direction="up" delay={700} duration={1000}>
+              <h1 className="lg:mt-7 lg:text-[4rem] text-4xl">
+                -velopment agency
+              </h1>
+            </Fade>
 
-            <img
-              src={gethsemaneTechCircleAsset}
-              className="absolute -bottom-10 -right-10 max-w-[250px] lg:w-[250px] object-contain animate-spin"
-              alt=""
-            />
+            <Fade delay={1500} duration={1300}>
+              <img
+                src={gethsemaneTechCircleAsset}
+                className="absolute -bottom-10 -right-10 max-w-[250px] lg:w-[250px] object-contain animate-spin"
+                alt=""
+              />
+            </Fade>
           </div>
         </div>
 
@@ -115,7 +148,7 @@ export default function Homepage() {
         </div>
 
         {/* Featured projects section */}
-        <div className="lg:min-h-[600px] relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 py-24">
+        <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pt-32">
           <div className="flex flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
@@ -130,7 +163,7 @@ export default function Homepage() {
             <div className="flex flex-row flex-wrap gap-10">
               {/* Featured Project Card */}
               <div className="w-full flex flex-col gap-y-48">
-                <div className="flex lg:flex-row flex-wrap w-full lg:justify-between">
+                <div className="flex lg:flex-row flex-col gap-y-16 w-full lg:justify-between">
                   <div className="lg:w-[48%] w-full">
                     <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
                       <img
@@ -138,45 +171,34 @@ export default function Homepage() {
                         className="object-cover"
                       />
                     </div>
-                    <p className="text-sm text-center w-full">Shuttlelane</p>
+                    <p className="text-md text-center w-full mt-4">
+                      Shuttlelane
+                    </p>
                   </div>
-                  <div className="lg:w-[48%] w-full relative mt-16 lg:-bottom-80">
-                    <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
-                      <img
-                        src={shuttlelaneThumbnail}
-                        className="object-cover"
-                      />
-                    </div>
-                    <p className="text-sm text-center w-full">Shuttlelane</p>
+                  <div className="lg:w-[48%] w-full flex lg:flex-row lg:justify-center justify-center gap-x-10 lg:items-center">
+                    <Link
+                      to="https://www.shuttlelane.com"
+                      target="_blank"
+                      className="h-24 w-24 rounded-full transition-all lg:border-[2px] text-black hover:text-slate-500 border-[1.5px] hover:border-slate-500 border-black flex flex-row items-center justify-center"
+                    >
+                      <MdLink size={24} className="rotate-45" />
+                    </Link>
+                    <Link
+                      to="https://www.shuttlelane.com"
+                      target="_blank"
+                      className="h-24 w-24 transition-all rounded-full lg:border-[2px] border-[1.5px] text-black hover:text-slate-500 hover:border-slate-500 border-black flex flex-row items-center justify-center"
+                    >
+                      <MdLightbulb size={24} className="" />
+                    </Link>
                   </div>
                 </div>
-                {/* <div className="flex lg:flex-row flex-wrap w-full lg:justify-between">
-                  <div className="lg:w-[48%] w-full">
-                    <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
-                      <img
-                        src={shuttlelaneThumbnail}
-                        className="object-cover"
-                      />
-                    </div>
-                    <p className="text-sm text-center w-full">Shuttlelane</p>
-                  </div>
-                  <div className="lg:w-[48%] w-full relative -bottom-80">
-                    <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
-                      <img
-                        src={shuttlelaneThumbnail}
-                        className="object-cover"
-                      />
-                    </div>
-                    <p className="text-sm text-center w-full">Shuttlelane</p>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Our philosophy section */}
-        <div className="min-h-[850px] -top-24 lg:-top-0 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white lg:mt-44 rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pb-32">
+        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pb-32">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
