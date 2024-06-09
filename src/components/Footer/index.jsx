@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="relative bg-black gap-x-24 text-white w-full py-7">
+    <div className="relative bg-black gap-x-24 text-white w-full py-20 pb-20">
       <div className="flex flex-col gap-y-7 w-full">
         <Link
           to="https://linkedin.com/in/gethsemane-technologies-ltd"

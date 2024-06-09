@@ -140,6 +140,7 @@
   z-index: 40;
 }
 
+/* Open animations */
 .rec1OpenAnimation {
   animation: navbarOpenAnimation 0.8s ease-in 0s forwards;
 }
@@ -152,7 +153,6 @@
 .rec4OpenAnimation {
   animation: navbarOpenAnimation 0.8s ease-in 0.6s forwards;
 }
-
 .rec5OpenAnimation {
   animation: navbarOpenAnimation 0.8s ease-in 1.4s forwards;
 }
@@ -165,34 +165,47 @@
 .rec8OpenAnimation {
   animation: navbarOpenAnimation 0.8s ease-in 2s forwards;
 }
+
+/* Close animations */
 .rec1CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 0s forwards;
+  animation: fadeOut 0.8s ease-in 0.6s forwards !important;
 }
 .rec2CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 0.2s forwards;
+  animation: fadeOut 0.8s ease-in 0.6s forwards !important;
 }
 .rec3CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 0.4s forwards;
+  animation: fadeOut 0.8s ease-in 0.6s forwards !important;
 }
 .rec4CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 0.6s forwards;
+  animation: fadeOut 0.8s ease-in 0.6s forwards !important;
 }
-
 .rec5CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 1.4s forwards;
+  animation: navbarCloseAnimation 0.8s ease-in 0.8s forwards !important;
 }
 .rec6CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 1.6s forwards;
+  animation: navbarCloseAnimation 0.8s ease-in 1s forwards !important;
 }
 .rec7CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 1.8s forwards;
+  animation: navbarCloseAnimation 0.8s ease-in 1.2s forwards !important;
 }
 .rec8CloseAnimation {
-  animation: navbarCloseAnimation 0.8s ease-in 2s forwards;
+  animation: navbarCloseAnimation 0.8s ease-in 1.4s forwards !important;
 }
 
 .navbarContentAnimation {
   animation: navbarContentAnimation 0.8s ease-in 2.5s forwards;
+}
+
+.navbarContentCloseAnimation {
+  animation: navbarContentCloseAnimation 0.8s ease-in 0s forwards;
+}
+
+.blackBgOpenAnimation {
+  animation: fadeIn 0.8s ease-in 0s forwards;
+}
+
+.blackBgCloseAnimation {
+  animation: fadeOut 0.8s ease-in 0.8s forwards;
 }
 
 @keyframes navbarOpenAnimation {
@@ -221,5 +234,41 @@
     display: flex;
     z-index: 12;
     background-color: white;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 100%;
+    display: flex;
+  }
+  100% {
+    opacity: 0%;
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+    display: none;
+  }
+  100% {
+    opacity: 100%;
+    display: flex;
+  }
+}
+
+@keyframes navbarContentCloseAnimation {
+  0% {
+    opacity: 100%;
+    display: flex;
+    z-index: 12;
+    background-color: white;
+  }
+  100% {
+    opacity: 0%;
+    background-color: transparent;
+    display: none;
   }
 }

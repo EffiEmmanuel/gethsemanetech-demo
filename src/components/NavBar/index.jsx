@@ -20,8 +20,11 @@ function NavBar(props) {
           <span className="text-lg lg:text-xl mr-8">menu</span>
           <div className="fixed top-10 lg:right-14 right-7">
             <button
-              onClick={() => setAttachAnimation(true)}
-              className="flex flex-col gap-y-1 items-center justify-center w-6"
+              onClick={() => {
+                setAttachAnimation(true);
+                setDetachAnimation(false);
+              }}
+              className="flex flex-col gap-y-1 items-center justify-center w-6 focus:outline-none"
             >
               <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
               <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
@@ -31,56 +34,56 @@ function NavBar(props) {
       </div>
 
       <div
-        className={`flex-row w-full fixed left-0 z-[10] top-0 min-h-screen items-end ${
-          attachAnimation ? "flex" : "hidden"
-        }`}
+        className={`w-full fixed left-0 z-[10] top-0 min-h-screen items-end ${
+          attachAnimation ? "flex flex-row" : "hidden"
+        } ${detachAnimation && "hidden"} transition-all`}
       >
         <div
           className={`w-1/4 bg-black rec1 ${
-            attachAnimation && "rec1OpenAnimation"
-          }`}
+            attachAnimation ? "rec1OpenAnimation" : ""
+          } z-[10] ${detachAnimation ? "" : ""}`}
         ></div>
         <div
           className={`w-1/4 bg-black rec2 ${
-            attachAnimation && "rec2OpenAnimation"
-          }`}
+            attachAnimation ? "rec2OpenAnimation" : ""
+          } z-[10] ${detachAnimation ? "" : ""}`}
         ></div>
         <div
           className={`w-1/4 bg-black rec3 ${
-            attachAnimation && "rec3OpenAnimation"
-          }`}
+            attachAnimation ? "rec3OpenAnimation" : ""
+          } z-[10] ${detachAnimation ? "" : ""}`}
         ></div>
         <div
           className={`w-1/4 bg-black rec4 ${
-            attachAnimation && "rec4OpenAnimation"
-          }`}
+            attachAnimation ? "rec4OpenAnimation" : ""
+          } z-[10] ${detachAnimation ? "" : ""}`}
         ></div>
       </div>
 
       <div
-        className={`flex-row w-full fixed left-0 z-[11] top-0 min-h-screen items-end ${
-          attachAnimation ? "flex" : "hidden"
-        }`}
+        className={`w-full fixed left-0 z-[11] top-0 min-h-screen items-end ${
+          attachAnimation ? "flex flex-row" : "hidden"
+        } ${detachAnimation && "hidden"} transition-all`}
       >
         <div
           className={`w-1/4 bg-white rec1 ${
-            attachAnimation && "rec5OpenAnimation"
-          } ${detachAnimation && "rec1CloseAnimation"}`}
+            attachAnimation ? "rec5OpenAnimation" : ""
+          } ${detachAnimation ? "rec1CloseAnimation" : ""} z-[11]`}
         ></div>
         <div
           className={`w-1/4 bg-white rec2 ${
-            attachAnimation && "rec6OpenAnimation"
-          } ${detachAnimation && "rec2CloseAnimation"}`}
+            attachAnimation ? "rec6OpenAnimation" : ""
+          } ${detachAnimation ? "rec2CloseAnimation" : ""} z-[11]`}
         ></div>
         <div
           className={`w-1/4 bg-white rec3 ${
-            attachAnimation && "rec7OpenAnimation"
-          } ${detachAnimation && "rec3CloseAnimation"}`}
+            attachAnimation ? "rec7OpenAnimation" : ""
+          } ${detachAnimation ? "rec3CloseAnimation" : ""} z-[11]`}
         ></div>
         <div
           className={`w-1/4 bg-white rec4 ${
-            attachAnimation && "rec8OpenAnimation"
-          } ${detachAnimation && "rec4CloseAnimation"}`}
+            attachAnimation ? "rec8OpenAnimation" : ""
+          } ${detachAnimation ? "rec4CloseAnimation" : ""} z-[11]`}
         ></div>
       </div>
 
@@ -88,7 +91,9 @@ function NavBar(props) {
         ref={props?.navbarRef}
         className={`${
           attachAnimation ? "navbarContentAnimation" : "hidden bg-transparent"
-        } w-full z-[9] left-0 fixed top-0 right-0 shadow-md min-h-screen py-7 px-7 lg:px-14`}
+        } ${
+          detachAnimation ? "navbarContentCloseAnimation" : ""
+        } transition-all w-full z-[9] left-0 fixed top-0 right-0 shadow-md min-h-screen py-7 px-7 lg:px-14`}
       >
         <Fade duration={1000} delay={3200} className="w-full">
           <div className="w-full flex items-center justify-between">
@@ -101,8 +106,10 @@ function NavBar(props) {
               <span className="text-lg lg:text-xl mr-8">close</span>
               <div className="fixed top-[35px] lg:right-14 right-7">
                 <button
-                  onClick={() => setDetachAnimation(true)}
-                  className="flex flex-col gap-y-1 items-center justify-center w-6"
+                  onClick={() => {
+                    setDetachAnimation(true);
+                  }}
+                  className="focus:outline-none flex flex-col gap-y-1 items-center justify-center w-6"
                 >
                   <FaXmark size={24} />
                 </button>

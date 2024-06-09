@@ -51,10 +51,15 @@ export default function Homepage() {
 
   return (
     <div>
-      <div className="mt-24">
+      <div className="mt-16">
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
           <div className="w-full px-7 lg:px-14 min-h-[45vh] lg:min-h-[70vh] mt-12 lg:relative lg:top-6">
+            <Fade duration={1000} delay={1300}>
+              <h1 className="lg:text-[1.5rem] text-2xl mb-5 font-light">
+                /ɡɛθˈsɛməni/
+              </h1>
+            </Fade>
             <Fade duration={1000}>
               <h1 className="lg:text-[4rem] text-4xl">We are a Software</h1>
             </Fade>
@@ -128,7 +133,7 @@ export default function Homepage() {
 
         {/* Featured projects section */}
         <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pt-32">
-          <div className="flex flex-col lg:px-12 gap-y-3">
+          <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
                 Featured{" "}
@@ -144,11 +149,16 @@ export default function Homepage() {
               <div className="w-full flex flex-col justify-center gap-y-48">
                 <div className="flex lg:flex-row flex-col gap-y-16 w-full lg:justify-between">
                   <div className="lg:w-[48%] w-full">
-                    <div className="rounded-lg w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
-                      <img
-                        src={shuttlelaneThumbnail}
-                        className="object-cover w-full"
-                      />
+                    <div className="rounded-xl w-full h-[400px] overflow-hidden flex flex-row items-center justify-center bg-[#AECAB4]">
+                      <video
+                        className="h-[400px] w-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source src="https://res.cloudinary.com/gethsemane-tech/video/upload/v1717873683/Untitled_design_anqubd.mp4" />
+                      </video>
                     </div>
                     <p className="text-md text-center w-full mt-4">
                       Shuttlelane
@@ -177,7 +187,7 @@ export default function Homepage() {
         </div>
 
         {/* Our philosophy section */}
-        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pb-32">
+        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pb-48 pt-20">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
@@ -221,7 +231,9 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className="-top-48 lg:-top-20 bg-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 py-24">
+        <div className="-top-40 bg-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 py-10"></div>
+
+        <div className="-top-20 bg-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 pb-24">
           <div className="flex flex-col">
             <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
               <span className="lg:text-6xl text-3xl italic font-light">
