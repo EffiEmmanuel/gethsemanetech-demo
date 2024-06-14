@@ -56,18 +56,23 @@ export default function Homepage() {
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
           <div className="w-full text-center px-7 lg:px-14 min-h-[70vh] mt-12 lg:relative lg:top-6">
-            <Fade duration={1000} direction="up" delay={1300} className="-mt-5">
+            <Fade
+              duration={1000}
+              direction="up"
+              delay={1300}
+              className="lg:-mt-5"
+            >
               <h1 className="lg:text-[1.5rem] text-2xl mb-5 text-[#ED2A6C]">
                 /ɡɛθˈsɛməni/
               </h1>
             </Fade>
-            <Fade duration={1000} className="-mt-5">
+            <Fade duration={1000} className="lg:-mt-5">
               <h1 className="lg:text-[4rem] text-[2.2rem]">
                 We are a <span className="text-[#ED2A6C]">Software</span>{" "}
                 <span className="italic font-light">design</span>
               </h1>
             </Fade>
-            <Fade duration={1000} className="-mt-10">
+            <Fade duration={1000} className="lg:-mt-10">
               <h1 className="lg:mt-7 lg:text-[4rem] text-[2.2rem]">
                 and <span className="italic font-light">development</span>{" "}
                 agency
@@ -83,7 +88,7 @@ export default function Homepage() {
             </Fade>
 
             <div className="mt-8 w-full flex lg:flex-row flex-col gap-5 items-center justify-center">
-              <Fade direction="up" duration={1000}>
+              <Fade direction="up" className="lg:w-52 w-[70%]" duration={1000}>
                 <Link
                   to="/"
                   className="h-10 text-sm lg:w-52 w-full border-[1.8px] flex flex-row items-center justify-center border-black p-3 rounded-full"
@@ -92,7 +97,12 @@ export default function Homepage() {
                 </Link>
               </Fade>
 
-              <Fade direction="up" duration={1000} delay={300}>
+              <Fade
+                direction="up"
+                className="lg:w-52 w-[70%]"
+                duration={1000}
+                delay={300}
+              >
                 <Link
                   to="/"
                   className="h-10 text-sm lg:w-52 w-full bg-gethsemaneRed text-white flex flex-row items-center justify-center p-3 rounded-full"
