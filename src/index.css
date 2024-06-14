@@ -122,8 +122,70 @@
   font-style: italic;
 }
 
+/* Usual Font Family */
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Light\ Italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Medium\ Italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/Bold\ Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Usual";
+  src: url("./assets/fonts/usual/ExtraBold\ Italic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
 * {
-  font-family: "Matter";
+  font-family: "Usual";
 }
 
 /* Custom styles */
@@ -271,4 +333,17 @@
     background-color: transparent;
     display: none;
   }
+}
+
+/* Hero background */
+.heroBg {
+  background: url("./assets/images/circle-blur.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: -150px;
+}
+
+/* Font */
+.fontMatter {
+  font-family: "Matter";
 }

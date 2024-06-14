@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from "react";
 // Images
-import gethsemaneTechLogo from "../../assets/logos/gethsemane-technologies-logo.png";
+import gethsemaneTechLogo from "../../assets/logos/gethsemane-tech.svg";
 import { Fade } from "react-awesome-reveal";
 import { FaXmark } from "react-icons/fa6";
 
@@ -9,7 +9,7 @@ function NavBar(props) {
   const [attachAnimation, setAttachAnimation] = useState(false);
   const [detachAnimation, setDetachAnimation] = useState(false);
   return (
-    <div className="relative z-[30] w-full px-7 lg:px-14">
+    <div className="relative z-[30] w-full px-7 lg:px-14 pt-7">
       <div className="w-full flex items-center justify-between">
         <img
           src={gethsemaneTechLogo}

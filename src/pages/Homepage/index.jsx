@@ -27,8 +27,8 @@ export default function Homepage() {
   const [isOther, setIsOther] = useState(false);
 
   // Client budget states
-  const [is700To1500, setIs700To1500] = useState(false);
-  const [is1500To5000, setIs1500To5000] = useState(false);
+  const [is1500To3000, setIs1500To00] = useState(false);
+  const [is3000To5000, setIs3000To5000] = useState(false);
   const [is5000To10000, setIs5000To10000] = useState(false);
   const [is20000AndAbove, setIs20000AndAbove] = useState(false);
   const [is10000To20000, setIs10000To20000] = useState(false);
@@ -50,40 +50,27 @@ export default function Homepage() {
   };
 
   return (
-    <div>
+    <div className="heroBg">
+      <NavBar />
       <div className="mt-16">
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
-          <div className="w-full px-7 lg:px-14 min-h-[45vh] lg:min-h-[70vh] mt-12 lg:relative lg:top-6">
-            <Fade duration={1000} delay={1300}>
-              <h1 className="lg:text-[1.5rem] text-2xl mb-5 font-light">
+          <div className="w-full text-center px-7 lg:px-14 min-h-[70vh] mt-12 lg:relative lg:top-6">
+            <Fade duration={1000} direction="up" delay={1300} className="-mt-5">
+              <h1 className="lg:text-[1.5rem] text-2xl mb-5 text-[#ED2A6C]">
                 /ɡɛθˈsɛməni/
               </h1>
             </Fade>
-            <Fade duration={1000}>
-              <h1 className="lg:text-[4rem] text-4xl">We are a Software</h1>
-            </Fade>
-            <div className="lg:mt-7 flex flex-row lg:gap-x-4 gap-x-2 items-center">
-              <Fade direction="up" delay={1000} duration={1000}>
-                <img
-                  src={gethsemaneTechCircleAsset}
-                  className="max-w-[60px] w-[60px] lg:max-w-[80px] lg:w-[80px] object-contain animate-spin"
-                  alt="Gethsemane Technologies"
-                />
-              </Fade>
-
-              <h1 className="lg:text-[4rem] text-4xl w-full flex flex-row items-center gap-x-2">
-                <Fade direction="up" delay={200} duration={1000}>
-                  <span className="italic font-light">design</span>
-                </Fade>
-                <Fade direction="up" delay={400} duration={1000}>
-                  <span>and de-</span>
-                </Fade>
+            <Fade duration={1000} className="-mt-5">
+              <h1 className="lg:text-[4rem] text-[2.2rem]">
+                We are a <span className="text-[#ED2A6C]">Software</span>{" "}
+                <span className="italic font-light">design</span>
               </h1>
-            </div>
-            <Fade direction="up" delay={700} duration={1000}>
-              <h1 className="lg:mt-7 lg:text-[4rem] text-4xl">
-                -velopment agency
+            </Fade>
+            <Fade duration={1000} className="-mt-10">
+              <h1 className="lg:mt-7 lg:text-[4rem] text-[2.2rem]">
+                and <span className="italic font-light">development</span>{" "}
+                agency
               </h1>
             </Fade>
 
@@ -94,11 +81,31 @@ export default function Homepage() {
                 alt=""
               />
             </Fade>
+
+            <div className="mt-8 w-full flex lg:flex-row flex-col gap-5 items-center justify-center">
+              <Fade direction="up" duration={1000}>
+                <Link
+                  to="/"
+                  className="h-10 text-sm lg:w-52 w-full border-[1.8px] flex flex-row items-center justify-center border-black p-3 rounded-full"
+                >
+                  Learn more
+                </Link>
+              </Fade>
+
+              <Fade direction="up" duration={1000} delay={300}>
+                <Link
+                  to="/"
+                  className="h-10 text-sm lg:w-52 w-full bg-gethsemaneRed text-white flex flex-row items-center justify-center p-3 rounded-full"
+                >
+                  Get a quote
+                </Link>
+              </Fade>
+            </div>
           </div>
         </div>
 
         {/* About section */}
-        <div className="min-h-[600px] lg:min-h-[700px] relative -top-32 bg-black flex gap-x-24 flex-row items-center justify-between text-white mt-20 rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14">
+        <div className="min-h-[600px] lg:min-h-[800px] relative -top-32 bg-black flex gap-x-24 flex-row items-center justify-between text-white mt-20 rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
@@ -113,14 +120,14 @@ export default function Homepage() {
 
           <div className="flex flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
-              <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
                 About{" "}
-                <span className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Us
                 </span>
               </h2>
             </div>
-            <p className="">
+            <p className="font-matter">
               Gethsemane Technologies is a leading software development agency
               focused on UI/UX design, mobile and web development.
             </p>
@@ -132,17 +139,17 @@ export default function Homepage() {
         </div>
 
         {/* Featured projects section */}
-        <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pt-32">
+        <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
-              <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
                 Featured{" "}
-                <span className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Project
                 </span>
               </h2>
             </div>
-            <p className="">Check out our most recent project.</p>
+            <p className="font-matter">Check out our most recent project.</p>
 
             <div className="flex flex-row justify-center gap-10 w-full">
               {/* Featured Project Card */}
@@ -160,7 +167,7 @@ export default function Homepage() {
                         <source src="https://res.cloudinary.com/gethsemane-tech/video/upload/v1717873683/Untitled_design_anqubd.mp4" />
                       </video>
                     </div>
-                    <p className="text-md text-center w-full mt-4">
+                    <p className="font-matter text-md text-center w-full mt-4">
                       Shuttlelane
                     </p>
                   </div>
@@ -187,7 +194,7 @@ export default function Homepage() {
         </div>
 
         {/* Our philosophy section */}
-        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] w-full p-7 lg:px-14 pb-48 pt-20">
+        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pb-48 pt-20">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
@@ -202,16 +209,16 @@ export default function Homepage() {
 
           <div className="flex flex-col lg:px-12 gap-y-3 lg:w-[50%] w-full">
             <div className="flex flex-col">
-              <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
                 Our <br />{" "}
-                <span className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Philosophy
                 </span>
               </h2>
             </div>
 
             <div className="lg:text-lg text-md flex flex-col gap-y-4 mt-4">
-              <p className="">
+              <p className="font-matter">
                 At Gethsemane Technologies, our developers work together with
                 our UI/UX designers. We are big on building to specification.
                 Gethsemane Technologies does not do cookie-cutter solutions, we
@@ -225,18 +232,18 @@ export default function Homepage() {
               </p>
             </div>
 
-            <button className="mt-4 border-[1.5px] lg:text-lg text-md lg:border-2 border-white bg-transparent h-24 w-full lg:w-1/2 rounded-full">
+            <button className="font-matter mt-4 border-[1.5px] lg:text-lg text-md lg:border-2 border-white bg-transparent h-24 w-full lg:w-1/2 rounded-full">
               Contact Us
             </button>
           </div>
         </div>
 
-        <div className="-top-40 bg-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 py-10"></div>
+        <div className="-top-40 bg-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 py-10"></div>
 
-        <div className="-top-20 bg-white rounded-tr-[40px] lg:rounded-tr-[70px] rounded-tl-[40px] lg:rounded-tl-[70px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 pb-24">
+        <div className="-top-20 bg-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 pb-24">
           <div className="flex flex-col">
-            <h2 className="lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
-              <span className="lg:text-6xl text-3xl italic font-light">
+            <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <span className="font-matter text-gethsemaneRed lg:text-6xl text-3xl italic font-light">
                 Hey!{" "}
               </span>
               Tell us about <br />
@@ -251,7 +258,7 @@ export default function Homepage() {
 
           <form className="flex flex-col gap-y-7 mt-7">
             <div className="">
-              <h2 className="lg:text-3xl text-2xl lg:leading-[60px]">
+              <h2 className="font-matter lg:text-3xl text-2xl lg:leading-[60px]">
                 I'm interested in
               </h2>
 
@@ -261,9 +268,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsSiteFromScratch(!isSiteFromScratch);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isSiteFromScratch
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -274,9 +281,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsAppFromScratch(!isAppFromScratch);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isAppFromScratch
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -287,9 +294,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsUIUXDesign(!isUIUXDesign);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isUIUXDesign
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -300,9 +307,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsWebAppDevelopment(!isWebAppDevelopment);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isWebAppDevelopment
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -313,9 +320,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsMaintenance(!isMaintenance);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isMaintenance
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -326,9 +333,9 @@ export default function Homepage() {
                     e.preventDefault();
                     setIsOther(!isOther);
                   }}
-                  className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                  className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                     isOther
-                      ? "bg-black text-white"
+                      ? "bg-gethsemaneRed text-white"
                       : "bg-transparent border-[1.5px] lg:border-2 border-black"
                   }  rounded-full`}
                 >
@@ -339,7 +346,7 @@ export default function Homepage() {
 
             <div className="flex flex-col gap-y-7 lg:flex-row lg:justify-between lg:items-center lg:gap-x-7">
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
-                <label htmlFor="firstName" className="text-sm">
+                <label htmlFor="font-matter firstName" className="text-sm">
                   First Name
                 </label>
                 <input
@@ -347,11 +354,11 @@ export default function Homepage() {
                   name="firstName"
                   id="firstName"
                   placeholder="John"
-                  className="h-16 p-4 bg-slate-200"
+                  className="h-16 p-4 bg-slate-200 font-matter"
                 />
               </div>
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
-                <label htmlFor="lastName" className="text-sm">
+                <label htmlFor="lastName" className="text-sm font-matter">
                   Last Name
                 </label>
                 <input
@@ -359,13 +366,13 @@ export default function Homepage() {
                   name="lastName"
                   id="lastName"
                   placeholder="Doe"
-                  className="h-16 p-4 bg-slate-200"
+                  className="h-16 p-4 bg-slate-200 font-matter"
                 />
               </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:gap-x-7 gap-y-7">
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
-                <label htmlFor="emailAddress" className="text-sm">
+                <label htmlFor="emailAddress" className="text-sm font-matter">
                   Email Address
                 </label>
                 <input
@@ -373,11 +380,14 @@ export default function Homepage() {
                   name="emailAddress"
                   id="emailAddress"
                   placeholder="johndoe@organization.com"
-                  className="h-16 p-4 bg-slate-200"
+                  className="h-16 p-4 bg-slate-200 font-matter"
                 />
               </div>
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
-                <label htmlFor="projectDescription" className="text-sm">
+                <label
+                  htmlFor="projectDescription"
+                  className="text-sm font-matter"
+                >
                   Tell us about your project
                 </label>
                 <input
@@ -385,100 +395,100 @@ export default function Homepage() {
                   name="projectDescription"
                   id="projectDescription"
                   placeholder="Tell us about your project"
-                  className="h-16 p-4 bg-slate-200"
+                  className="h-16 p-4 bg-slate-200 font-matter"
                 />
               </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:gap-x-7 gap-y-7">
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
-                <label htmlFor="lastName" className="text-sm">
+                <label htmlFor="lastName" className="text-sm font-matter">
                   Project budget (USD)
                 </label>
                 <div className="lg:text-lg text-sm my-3 w-full flex flex-row flex-wrap gap-4 items-center">
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setIs700To1500(!is700To1500);
-                      setIs1500To5000(false);
+                      setIs1500To00(!is1500To3000);
+                      setIs3000To5000(false);
                       setIs5000To10000(false);
                       setIs10000To20000(false);
                       setIs20000AndAbove(false);
                     }}
-                    className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
-                      is700To1500
-                        ? "bg-black text-white"
+                    className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                      is1500To3000
+                        ? "bg-gethsemaneRed text-white"
                         : "bg-transparent border-[1.5px] lg:border-2 border-black"
                     }  rounded-full`}
                   >
-                    700-1.5K
+                    1.5K - 3K
                   </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setIs700To1500(false);
-                      setIs1500To5000(!is1500To5000);
+                      setIs1500To00(false);
+                      setIs3000To5000(!is3000To5000);
                       setIs5000To10000(false);
                       setIs10000To20000(false);
                       setIs20000AndAbove(false);
                     }}
-                    className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
-                      is1500To5000
-                        ? "bg-black text-white"
+                    className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                      is3000To5000
+                        ? "bg-gethsemaneRed text-white"
                         : "bg-transparent border-[1.5px] lg:border-2 border-black"
                     }  rounded-full`}
                   >
-                    1.5-5K
+                    3k - 5K
                   </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setIs700To1500(false);
-                      setIs1500To5000(false);
+                      setIs1500To00(false);
+                      setIs3000To5000(false);
                       setIs5000To10000(!is5000To10000);
                       setIs10000To20000(false);
                       setIs20000AndAbove(false);
                     }}
-                    className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                    className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                       is5000To10000
-                        ? "bg-black text-white"
+                        ? "bg-gethsemaneRed text-white"
                         : "bg-transparent border-[1.5px] lg:border-2 border-black"
                     }  rounded-full`}
                   >
-                    5-10K
+                    5k - 10K
                   </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setIs700To1500(false);
+                      setIs1500To00(false);
                       setIs10000To20000(!is10000To20000);
-                      setIs1500To5000(false);
+                      setIs3000To5000(false);
                       setIs5000To10000(false);
                       setIs20000AndAbove(false);
                     }}
-                    className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                    className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                       is10000To20000
-                        ? "bg-black text-white"
+                        ? "bg-gethsemaneRed text-white"
                         : "bg-transparent border-[1.5px] lg:border-2 border-black"
                     }  rounded-full`}
                   >
-                    10-20K
+                    10k - 20K
                   </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setIs700To1500(false);
-                      setIs1500To5000(false);
+                      setIs1500To00(false);
+                      setIs3000To5000(false);
                       setIs5000To10000(false);
                       setIs10000To20000(false);
                       setIs20000AndAbove(!is20000AndAbove);
                     }}
-                    className={`h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
+                    className={`font-matter h-10 flex items-center justify-center flex-row w-auto p-4 transition-all ${
                       is20000AndAbove
-                        ? "bg-black text-white"
+                        ? "bg-gethsemaneRed text-white"
                         : "bg-transparent border-[1.5px] lg:border-2 border-black"
                     }  rounded-full`}
                   >
-                    20K{">"}
+                    20K{" >"}
                   </button>
                 </div>
               </div>
@@ -494,14 +504,16 @@ export default function Homepage() {
                   onChange={handleFileChange}
                   className="absolute top-0 w-full h-full opacity-0 z-40 cursor-pointer"
                 />
-                <span>Add attachment</span>
+                <span className="font-matter">Add attachment</span>
               </div>
               {attachmentFileName && (
-                <span className="text-slate-400">{attachmentFileName}</span>
+                <span className="text-slate-400 font-matter">
+                  {attachmentFileName}
+                </span>
               )}
             </div>
 
-            <button className="mt-4 lg:text-lg text-sm border-[1.5px] lg:border-2 border-black bg-transparent h-24 w-full lg:w-1/2 rounded-full">
+            <button className="font-matter mt-4 lg:text-lg text-sm border-[1.5px] lg:border-2 border-black bg-transparent h-24 w-full lg:w-1/2 rounded-full">
               Send request
             </button>
           </form>
