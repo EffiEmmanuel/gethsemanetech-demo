@@ -364,7 +364,7 @@ export default function Homepage() {
                   name="firstName"
                   id="firstName"
                   placeholder="John"
-                  className="h-16 p-4 bg-slate-200 font-matter"
+                  className="h-16 p-4 bg-slate-200 font-matter text-[16px]"
                 />
               </div>
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
@@ -376,7 +376,7 @@ export default function Homepage() {
                   name="lastName"
                   id="lastName"
                   placeholder="Doe"
-                  className="h-16 p-4 bg-slate-200 font-matter"
+                  className="h-16 p-4 bg-slate-200 font-matter text-[16px]"
                 />
               </div>
             </div>
@@ -390,7 +390,7 @@ export default function Homepage() {
                   name="emailAddress"
                   id="emailAddress"
                   placeholder="johndoe@organization.com"
-                  className="h-16 p-4 bg-slate-200 font-matter"
+                  className="h-16 p-4 bg-slate-200 font-matter text-[16px]"
                 />
               </div>
               <div className="flex flex-col gap-y-1 lg:w-[48%] w-full">
@@ -405,7 +405,7 @@ export default function Homepage() {
                   name="projectDescription"
                   id="projectDescription"
                   placeholder="Tell us about your project"
-                  className="h-16 p-4 bg-slate-200 font-matter"
+                  className="h-16 p-4 bg-slate-200 font-matter text-[16px]"
                 />
               </div>
             </div>
