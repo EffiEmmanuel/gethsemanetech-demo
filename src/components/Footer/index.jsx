@@ -1,10 +1,39 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
+
+// Images
+import getInTouchImage from "../../assets/images/web-development.svg";
 
 export default function Footer() {
+  const { rive, RiveComponent } = useRive({
+    src: "https://res.cloudinary.com/gethsemane-tech/raw/upload/v1718485581/gethsemanetech-shapes-animation_6_zlmtwt.riv",
+    stateMachines: "stateMachine",
+    layout: new Layout({
+      fit: Fit.FitWidth, // Change to: rive.Fit.Contain, or Cover
+      alignment: Alignment.Center,
+    }),
+    autoplay: true,
+  });
+
   return (
-    <div className="relative bg-black gap-x-24 text-white w-full py-20 pb-20">
+    <div className="relative bg-black gap-x-24 text-white w-full py-20 pb-20 rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px]">
+      <div className="min-h-screen flex flex-col gap-y-4 lg:flex-row lg:items-center p-7 lg:px-14 gap-x-4">
+        <h2 className="lg:text-[4rem] text-[2.1rem] text-white lg:w-[50%] w-full">
+          Let's have a chat <br />
+          <span className="text-gethsemaneRed flex flex-row items-center gap-x-2">
+            <span className="">Get in touch</span>
+            <FaArrowRight size={24} className="" />
+          </span>
+        </h2>
+
+        <div className="lg:w-[50%] h-[500px] w-full flex flex-row justify-end footerAnimationContainer">
+          <RiveComponent />
+        </div>
+      </div>
+
       <div className="flex flex-col gap-y-7 w-full">
         <Link
           to="https://linkedin.com/in/gethsemane-technologies-ltd"

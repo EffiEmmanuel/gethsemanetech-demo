@@ -348,3 +348,8 @@
 .fontMatter {
   font-family: "Matter";
 }
+
+/* Footer animation */
+.footerAnimationContainer canvas {
+  height: 615px;
+}

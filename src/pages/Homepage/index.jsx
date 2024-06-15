@@ -156,7 +156,7 @@ export default function Homepage() {
         </div>
 
         {/* About section continued */}
-        <div className="min-h-[900px] lg:min-h-[900px] relative -top-48 bg-gethsemaneBlack flex gap-x-24 flex-row justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-14">
+        <div className="min-h-[800px] lg:min-h-[800px] relative -top-48 bg-gethsemaneBlack flex gap-x-24 flex-row justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-14">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="font-matter lg:max-w-[50%] w-full lg:text-[3rem] text-4xl lg:leading-[60px] leading-[50px]">
@@ -173,7 +173,7 @@ export default function Homepage() {
                 <h2 className="text-gethsemaneRed">1.</h2>
 
                 <div className="flex-col flex gap-y-2">
-                  <h2 className="text-gethsemaneBlack">Rockstar Team</h2>
+                  <h2 className="text-white">Rockstar Team</h2>
                   <p className="font-light">
                     At Gethsemane Technologies, we've got a rockstar squad
                     packed with insanely talented web, graphic, and motion
@@ -190,9 +190,7 @@ export default function Homepage() {
                 <h2 className="text-gethsemaneRed">2.</h2>
 
                 <div className="flex-col flex gap-y-2">
-                  <h2 className="text-gethsemaneBlack">
-                    Effective Communication
-                  </h2>
+                  <h2 className="text-white">Effective Communication</h2>
                   <p className="font-light">
                     Communication is the key to any successful relationship.
                     Here at Gethsemane Technologies, we prioritize prompt
@@ -209,9 +207,7 @@ export default function Homepage() {
                 <h2 className="text-gethsemaneRed">3.</h2>
 
                 <div className="flex-col flex gap-y-2">
-                  <h2 className="text-gethsemaneBlack">
-                    Realizing Your Vision
-                  </h2>
+                  <h2 className="text-white">Realizing Your Vision</h2>
                   <p className="font-light">
                     Members of our team have robust technical backgrounds in
                     Open Source, DevOps, and SaaS domains. This expertise
@@ -229,7 +225,7 @@ export default function Homepage() {
         </div>
 
         {/* Featured projects section */}
-        <div className="min-h-[900px] lg:min-h-[800px] relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
+        <div className="min-h-[900px] lg:min-h-[800px] relative -top-60 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
