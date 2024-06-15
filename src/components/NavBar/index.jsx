@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import gethsemaneTechLogo from "../../assets/logos/gethsemane-tech.svg";
 import { Fade } from "react-awesome-reveal";
 import { FaXmark } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { RiMenu3Line } from "react-icons/ri";
 
 function NavBar(props) {
   const [attachAnimation, setAttachAnimation] = useState(false);
@@ -16,21 +18,44 @@ function NavBar(props) {
           className="max-w-[110px] w-[110px] object-contain"
         />
 
-        <button className="focus:outline-none">
-          <span className="text-lg lg:text-xl mr-8">menu</span>
-          <div className="fixed top-10 lg:right-14 right-7">
-            <button
-              onClick={() => {
-                setAttachAnimation(true);
-                setDetachAnimation(false);
-              }}
-              className="flex flex-col gap-y-1 items-center justify-center w-6 focus:outline-none"
-            >
-              <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
-              <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
-            </button>
+        <div className="flex items-center gap-x-5">
+          <div className="lg:flex flex-row items-center gap-x-5 hidden">
+            <div className="">
+              <p className="text-sm font-medium">Services</p>
+            </div>
+            <Link to="/" className="text-sm font-medium">
+              About Us
+            </Link>
+            <Link to="/" className="text-sm font-medium">
+              Blog
+            </Link>
+            <Link to="/" className="text-sm font-medium text-gethsemaneRed">
+              info@gethsemanetech.com
+            </Link>
           </div>
-        </button>
+          <button
+            onClick={() => {
+              setAttachAnimation(true);
+              setDetachAnimation(false);
+            }}
+            className="focus:outline-none lg:hidden inline-block"
+          >
+            {/* <span className="text-lg lg:text-xl mr-8">menu</span> */}
+            <RiMenu3Line size={20} />
+            {/* <div className="fixed top-10 lg:right-14 right-7">
+              <button
+                onClick={() => {
+                  setAttachAnimation(true);
+                  setDetachAnimation(false);
+                }}
+                className="flex flex-col gap-y-1 items-center justify-center w-6 focus:outline-none"
+              >
+                <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
+                <span className="block relative top-0 h-[2px] w-full my-[1px] bg-black transition-all"></span>
+              </button>
+            </div> */}
+          </button>
+        </div>
       </div>
 
       <div
@@ -103,8 +128,8 @@ function NavBar(props) {
             />
 
             <button className="focus:outline-none">
-              <span className="text-lg lg:text-xl mr-8">close</span>
-              <div className="fixed top-[35px] lg:right-14 right-7">
+              {/* <span className="text-lg lg:text-xl mr-8">close</span> */}
+              <div className="fixed top-[30px] lg:right-14 right-7">
                 <button
                   onClick={() => {
                     setDetachAnimation(true);
