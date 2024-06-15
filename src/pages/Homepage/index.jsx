@@ -156,7 +156,7 @@ export default function Homepage() {
         </div>
 
         {/* About section continued */}
-        <div className="min-h-[900px] lg:min-h-[900px] relative -top-48 bg-gethsemaneBlack flex gap-x-24 flex-row justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
+        <div className="min-h-[900px] lg:min-h-[900px] relative -top-48 bg-gethsemaneBlack flex gap-x-24 flex-row justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-14">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="font-matter lg:max-w-[50%] w-full lg:text-[3rem] text-4xl lg:leading-[60px] leading-[50px]">
