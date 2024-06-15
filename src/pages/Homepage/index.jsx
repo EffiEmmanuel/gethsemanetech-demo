@@ -128,18 +128,21 @@ export default function Homepage() {
             </video>
           </div>
 
-          <div className="flex flex-col lg:px-12 gap-y-3">
+          <div className="lg:w-[50%] w-full flex flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
-                About{" "}
+                Building a website or web application is a{" "}
                 <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px] italic font-light">
-                  Us
-                </span>
+                  complex
+                </span>{" "}
+                thing to build on your own{" "}
               </h2>
             </div>
             <p className="font-matter">
-              Gethsemane Technologies is a leading software development agency
-              focused on UI/UX design, mobile and web development.
+              Most times, you just go wild cherry-picking & managing freelancers
+              but it doesn’t have to be like that. Gethsemane Technologies is a
+              leading software development agency focused on UI/UX design,
+              mobile and web development.
             </p>
 
             <button className="mt-4 border-2 border-white bg-transparent h-24 w-full lg:w-1/2 rounded-full">
@@ -235,7 +238,7 @@ export default function Homepage() {
                 build products exactly as they are during the design phase, no
                 shortcuts or simplifications whatsoever.
               </p>
-              <p className="">
+              <p className="font-matter">
                 We are driven by user-centered design and development that
                 drives productivity and increass revenue. We always strive to
                 exceed the expectations of every of our client.

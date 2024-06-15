@@ -6,14 +6,17 @@ module.exports = {
       textColor: {
         gethsemaneBlack: "#000",
         gethsemaneRed: "#ED2A6C",
+        gethsemaneRoyalBlue: "#4169E1",
       },
       backgroundColor: {
         gethsemaneBlack: "#000",
         gethsemaneRed: "#ED2A6C",
+        gethsemaneRoyalBlue: "#4169E1",
       },
       borderColor: {
         gethsemaneBlack: "#000",
         gethsemaneRed: "#ED2A6C",
+        gethsemaneRoyalBlue: "#4169E1",
       },
       animation: {
         spin: "spin 9s linear infinite",

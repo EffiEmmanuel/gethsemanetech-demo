@@ -1,15 +1,21 @@
 // @ts-nocheck
 import React, { useState } from "react";
-// Images
-import gethsemaneTechLogo from "../../assets/logos/gethsemane-tech.svg";
 import { Fade } from "react-awesome-reveal";
 import { FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
+import { FaLongArrowAltRight } from "react-icons/fa";
+// Images
+import gethsemaneTechLogo from "../../assets/logos/gethsemane-tech.svg";
+import WebDesignWebDevDrop from "../WebDesignWebDevDrop";
 
 function NavBar(props) {
   const [attachAnimation, setAttachAnimation] = useState(false);
   const [detachAnimation, setDetachAnimation] = useState(false);
+
+  // Menu states
+  const [isServicesActive, setIsServicesActive] = useState(false);
+
   return (
     <div className="relative z-[30] w-full px-7 lg:px-14 pt-7">
       <div className="w-full flex items-center justify-between">
@@ -20,8 +26,22 @@ function NavBar(props) {
 
         <div className="flex items-center gap-x-5">
           <div className="lg:flex flex-row items-center gap-x-5 hidden">
-            <div className="">
-              <p className="text-sm font-medium">Services</p>
+            <div
+              className="relative"
+              onMouseOver={() => {
+                setIsServicesActive(true);
+              }}
+              onMouseOut={() => {
+                setIsServicesActive(false);
+              }}
+            >
+              <p className="text-sm font-medium pb-5 mt-5">Services</p>
+
+              {isServicesActive && (
+                <Fade duration={1000}>
+                  <WebDesignWebDevDrop />
+                </Fade>
+              )}
             </div>
             <Link to="/" className="text-sm font-medium">
               About Us
