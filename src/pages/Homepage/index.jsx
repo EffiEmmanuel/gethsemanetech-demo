@@ -130,7 +130,7 @@ export default function Homepage() {
 
           <div className="lg:w-[50%] w-full flex flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
-              <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[60px]">
                 Building a website or web application is a{" "}
                 <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   complex
