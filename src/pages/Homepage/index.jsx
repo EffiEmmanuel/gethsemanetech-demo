@@ -115,7 +115,7 @@ export default function Homepage() {
         </div>
 
         {/* About section */}
-        <div className="min-h-[800px] lg:min-h-[800px] relative -top-32 bg-black flex gap-x-24 flex-row items-center justify-between text-white mt-20 rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14">
+        <div className="min-h-[900px] lg:min-h-[800px] relative -top-32 bg-black flex gap-x-24 flex-row items-center justify-between text-white mt-20 rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
