@@ -6,13 +6,15 @@ import { MdLightbulb, MdLink } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
+import { RiveCanvas } from "@rive-app/react-canvas";
+import { Rive, Layout } from "rive-js";
+import { Fade } from "react-awesome-reveal";
 
 // Images
 import gethsemaneTechCircleAsset from "../../assets/images/gethsemane-tech-circle-asset.png";
 import wave from "../../assets/images/wave.jpg";
 // Project images
 import shuttlelaneThumbnail from "../../assets/images/projects/shuttlelane/shuttlelane-thumb2.png";
-import { Fade } from "react-awesome-reveal";
 
 MouseFollower.registerGSAP(gsap);
 const cursor = new MouseFollower();
@@ -140,10 +142,12 @@ export default function Homepage() {
             </div>
             <p className="font-matter">
               Most times, you just go wild cherry-picking & managing freelancers
-              but it doesn’t have to be like that. Gethsemane Technologies is a
-              leading software development agency focused on UI/UX design,
-              mobile and web development.
+              but it doesn’t have to be like that.
             </p>
+
+            {/* Gethsemane Technologies is a
+              leading software development agency focused on UI/UX design,
+              mobile and web development. */}
 
             <button className="mt-4 border-2 border-white bg-transparent h-24 w-full lg:w-1/2 rounded-full">
               How we work
@@ -151,8 +155,81 @@ export default function Homepage() {
           </div>
         </div>
 
+        {/* About section continued */}
+        <div className="min-h-[900px] lg:min-h-[900px] relative -top-48 bg-gethsemaneBlack flex gap-x-24 flex-row justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
+          <div className="flex w-full flex-col lg:px-12 gap-y-3">
+            <div className="flex flex-col">
+              <h2 className="font-matter lg:max-w-[50%] w-full lg:text-[3rem] text-4xl lg:leading-[60px] leading-[50px]">
+                Work with{" "}
+                <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[50px] italic font-light">
+                  Gethsemane Technologies{" "}
+                </span>
+                to see the difference
+              </h2>
+            </div>
+
+            <div className="flex lg:flex-row lg:justify-between gap-7 flex-col mt-8 pb-10">
+              <div className="flex lg:flex-row gap-3 flex-col lg:w-1/3 w-full">
+                <h2 className="text-gethsemaneRed">1.</h2>
+
+                <div className="flex-col flex gap-y-2">
+                  <h2 className="text-gethsemaneBlack">Rockstar Team</h2>
+                  <p className="font-light">
+                    At Gethsemane Technologies, we've got a rockstar squad
+                    packed with insanely talented web, graphic, and motion
+                    designers, plus our awesome software engineers. And they're
+                    led by project managers who really know their craft. This
+                    whole crew has this incredible synergy and combined
+                    experience that helps us deliver mind-blowing websites and
+                    web applications time after time. It's like magic, but
+                    better!
+                  </p>
+                </div>
+              </div>
+              <div className="flex lg:flex-row gap-3 flex-col lg:w-1/3 w-full">
+                <h2 className="text-gethsemaneRed">2.</h2>
+
+                <div className="flex-col flex gap-y-2">
+                  <h2 className="text-gethsemaneBlack">
+                    Effective Communication
+                  </h2>
+                  <p className="font-light">
+                    Communication is the key to any successful relationship.
+                    Here at Gethsemane Technologies, we prioritize prompt
+                    responses, addressing inquiries within hours. Our team
+                    eagerly engages in discussions to comprehend your
+                    requirements thoroughly. Throughout the project lifecycle,
+                    we maintain transparency by providing regular updates,
+                    ensuring you remain well-informed about our progress on your
+                    project.
+                  </p>
+                </div>
+              </div>
+              <div className="flex lg:flex-row gap-3 flex-col lg:w-1/3 w-full">
+                <h2 className="text-gethsemaneRed">3.</h2>
+
+                <div className="flex-col flex gap-y-2">
+                  <h2 className="text-gethsemaneBlack">
+                    Realizing Your Vision
+                  </h2>
+                  <p className="font-light">
+                    Members of our team have robust technical backgrounds in
+                    Open Source, DevOps, and SaaS domains. This expertise
+                    enables us to seamlessly translate the technological
+                    complexities of your project into visually appealing and
+                    clear graphics, ensuring a seamless and engaging user
+                    experience. Our approach not only enhances the visual appeal
+                    but also bridges the gap between complex technical details
+                    and user-friendly presentations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Featured projects section */}
-        <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
+        <div className="min-h-[900px] lg:min-h-[800px] relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
               <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
@@ -207,7 +284,7 @@ export default function Homepage() {
         </div>
 
         {/* Our philosophy section */}
-        <div className="min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pb-48 pt-20">
+        <div className="min-h-[900px] lg:min-h-[850px] -top-24 relative bg-black flex gap-x-24 flex-row items-center justify-between text-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pb-48 pt-20">
           <div className="lg:w-[50%] lg:inline-block hidden overflow-hidden">
             <video
               className="h-[400px] object-cover"
