@@ -55,7 +55,7 @@ export default function Homepage() {
       <div className="mt-16">
         {/* Hero section */}
         <div className="relative w-full overflow-hidden">
-          <div className="w-full text-center px-7 lg:px-14 min-h-[70vh] mt-12 lg:relative lg:top-6">
+          <div className="w-full text-center px-7 lg:px-14 min-h-[60vh] lg:min-h-[70vh] mt-12 lg:relative lg:top-6">
             <Fade
               duration={1000}
               direction="up"
@@ -67,13 +67,13 @@ export default function Homepage() {
               </h1>
             </Fade>
             <Fade duration={1000} className="lg:-mt-5">
-              <h1 className="lg:text-[3rem] text-[2rem]">
+              <h1 className="lg:text-[3rem] text-[1.8rem]">
                 We are a <span className="text-[#ED2A6C]">Software</span>{" "}
                 <span className="italic font-light">design</span>
               </h1>
             </Fade>
             <Fade duration={1000} className="lg:-mt-10">
-              <h1 className="lg:mt-7 lg:text-[3rem] text-[2rem]">
+              <h1 className="lg:mt-7 lg:text-[3rem] text-[1.8rem]">
                 and <span className="italic font-light">development</span>{" "}
                 agency
               </h1>
@@ -130,9 +130,9 @@ export default function Homepage() {
 
           <div className="flex flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
-              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
                 About{" "}
-                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Us
                 </span>
               </h2>
@@ -152,9 +152,9 @@ export default function Homepage() {
         <div className="relative -top-48 bg-white flex gap-x-24 flex-row justify-between text-gethsemaneBlack rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] w-full p-7 lg:px-14 pt-32">
           <div className="flex w-full flex-col lg:px-12 gap-y-3">
             <div className="flex flex-col">
-              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
                 Featured{" "}
-                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Project
                 </span>
               </h2>
@@ -219,9 +219,9 @@ export default function Homepage() {
 
           <div className="flex flex-col lg:px-12 gap-y-3 lg:w-[50%] w-full">
             <div className="flex flex-col">
-              <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
+              <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
                 Our <br />{" "}
-                <span className="font-matter text-gethsemaneRed lg:text-6xl text-4xl lg:leading-[60px] leading-[30px] italic font-light">
+                <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px] italic font-light">
                   Philosophy
                 </span>
               </h2>
@@ -252,8 +252,8 @@ export default function Homepage() {
 
         <div className="-top-20 bg-white rounded-tr-[30px] lg:rounded-tr-[30px] rounded-tl-[30px] lg:rounded-tl-[30px] relative text-gethsemaneBlack overflow-hidden p-7 lg:px-14 pb-24">
           <div className="flex flex-col">
-            <h2 className="font-matter lg:text-6xl text-4xl lg:leading-[60px] leading-[30px]">
-              <span className="font-matter text-gethsemaneRed lg:text-6xl text-3xl italic font-light">
+            <h2 className="font-matter lg:text-[3rem] text-4xl lg:leading-[60px] leading-[30px]">
+              <span className="font-matter text-gethsemaneRed lg:text-[3rem] text-3xl italic font-light">
                 Hey!{" "}
               </span>
               Tell us about <br />
